@@ -7,6 +7,7 @@
 import urllib.request
 import re
 import os
+import time
 
 path=os.path.abspath('.')
 
@@ -41,4 +42,7 @@ def get_img(html):
 if __name__=='__main__':
     url='http://bs309.com/xe/data/'
     num=input('页面最后一串代码：')
+    time_start=time.time()
     get_img(open_url(url+num))
+    time_end=time.time()
+    print('time cost',time_end-time_start,'s')
